@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_weight="10"
+    app:columnCount="3"
+    app:rowCount="3">
+    <LinearLayout
+        android:orientation="vertical"
+        android:gravity="center"
+        app:layout_columnSpan="3"
+        app:layout_columnWeight="3"
+        android:layout_margin="1dp"
+        android:background="#ffffff"
+        android:paddingBottom="15dp"
+        >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="数字控制中心"
+            android:textSize="24dp"
+            android:layout_marginTop="15dp"
+            android:textColor="#000000"
+            />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_margin="1dp"
+        android:background="#ffffff"
+        android:gravity="center"
+        android:orientation="vertical"
+        app:layout_columnWeight="1"
+        app:layout_rowWeight="1">
+
+        <ImageView
+            android:id="@+id/yk1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/yaokong" />
+
+        <TextView
+            android:id="@+id/yktext1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#000000"
+            android:text="OSC1" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_margin="1dp"
+        android:background="#ffffff"
+        android:gravity="center"
+        android:orientation="vertical"
+        app:layout_columnWeight="1"
+        app:layout_rowWeight="1">
+
+        <ImageView
+            android:id="@+id/yk2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/yaokong" />
+
+        <TextView
+            android:id="@+id/yktext2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#000000"
+            android:text="播放器" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_margin="1dp"
+        android:background="#ffffff"
+        android:gravity="center"
+        android:orientation="vertical"
+        app:layout_columnWeight="1"
+        app:layout_rowWeight="1">
+
+        <ImageView
+            android:id="@+id/yk3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/yaokong" />
+
+        <TextView
+            android:id="@+id/yktext3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#000000"
+            android:text="OSC2" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_margin="1dp"
+        android:background="#ffffff"
+        android:gravity="center"
+        android:orientation="vertical"
+        app:layout_columnWeight="1"
+        app:layout_rowWeight="1">
+
+        <ImageView
+            android:id="@+id/comp1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/comput" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#000000"
+            android:text="电脑" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_margin="1dp"
+        android:background="#ffffff"
+        android:gravity="center"
+        android:orientation="vertical"
+        app:layout_columnWeight="1"
+
+        app:layout_rowWeight="1">
+
+        <ImageView
+            android:id="@+id/comp2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/comput" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#000000"
+            android:text="电脑" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_margin="1dp"
+        android:background="#ffffff"
+        android:gravity="center"
+        android:orientation="vertical"
+        app:layout_columnWeight="1"
+        app:layout_rowWeight="1">
+
+        <ImageView
+            android:id="@+id/comp3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/comput" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#000000"
+            android:text="电脑" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_margin="1dp"
+        android:background="#ffffff"
+        android:gravity="center"
+        android:orientation="vertical"
+        app:layout_columnWeight="1"
+        app:layout_rowWeight="1">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/touy" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#000000"
+            android:text="投影" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_margin="1dp"
+        android:background="#ffffff"
+        android:gravity="center"
+        android:orientation="vertical"
+        app:layout_columnWeight="1"
+        app:layout_rowWeight="1">
+
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/touy" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#000000"
+            android:text="投影" />
+    </LinearLayout>
+
+
+</android.support.v7.widget.GridLayout>

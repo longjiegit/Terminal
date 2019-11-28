@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                                             xmlns:app="http://schemas.android.com/apk/res-auto"
+                                             xmlns:tools="http://schemas.android.com/tools"
+                                             android:layout_width="match_parent"
+                                             android:background="#ffffff"
+                                             android:layout_height="match_parent">
+    <TextView
+            android:id="@+id/ip"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="IP:"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:layout_marginLeft="15px"
+            android:layout_marginTop="50px"
+            android:textSize="16dp"
+
+    />
+    <EditText
+            android:id="@+id/ip_et"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintLeft_toLeftOf="@id/ip"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBaseline_toBaselineOf="@id/ip"
+            android:layout_marginLeft="100px"
+
+    />
+    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+              android:id="@+id/port"
+              android:text="Port:"
+              app:layout_constraintLeft_toLeftOf="parent"
+              app:layout_constraintTop_toBottomOf="@id/ip"
+              android:layout_marginLeft="15px"
+              android:layout_marginTop="30px"
+              android:textSize="16dp"
+
+
+    />
+    <EditText
+            android:id="@+id/port_et"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/ip_et"
+            app:layout_constraintLeft_toLeftOf="@id/port"
+            android:paddingLeft="20px"
+            android:layout_marginLeft="100px"
+            app:layout_constraintBaseline_toBaselineOf="@id/port"
+
+    />
+    <Button android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:id="@+id/cancle"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="@id/OK"
+            app:layout_constraintTop_toBottomOf="@id/port_et"
+            android:text="取消"
+    />
+    <Button android:layout_width="wrap_content" android:layout_height="wrap_content"
+        android:id="@+id/OK"
+            app:layout_constraintLeft_toLeftOf="@id/cancle"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/port"
+            app:layout_constraintBaseline_toBaselineOf="@id/cancle"
+            android:text="保存"
+    />
+
+
+</android.support.constraint.ConstraintLayout>
