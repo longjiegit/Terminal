@@ -6,6 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.GridView;
+import android.widget.ListView;
 
 import androidx.fragment.app.Fragment;
 
@@ -18,7 +19,7 @@ import com.mgc.terminal.bean.VideoBean;
 import java.util.List;
 
 public class VideoFragment extends Fragment {
-    private GridView mGridView;
+    private ListView mGridView;
     View view;
     List<VideoBean> mArrayList;
     private VideoAdapter adapter;
@@ -26,7 +27,7 @@ public class VideoFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         view=inflater.inflate(R.layout.fragment2, container, false);
-        mGridView = (GridView) view.findViewById(R.id.gridview2);
+        mGridView = (ListView) view.findViewById(R.id.gridview2);
         initdata();// 数据
         adapter = new VideoAdapter(view.getContext(),mArrayList );
         setLayout();
@@ -41,7 +42,7 @@ public class VideoFragment extends Fragment {
     }
     private void setLayout(){
         if (mGridView == null) {
-            mGridView = (GridView)view. findViewById(R.id.gridview2);
+            mGridView = (ListView) view. findViewById(R.id.gridview2);
         }
         mGridView.setVisibility(View.VISIBLE);
         mGridView.setSelection(0);

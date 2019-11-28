@@ -6,6 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.GridView;
+import android.widget.ListView;
 
 import androidx.fragment.app.Fragment;
 
@@ -16,7 +17,7 @@ import com.mgc.terminal.bean.SingletData;
 import java.util.List;
 
 public class Fragment1 extends Fragment {
-	private GridView mGridView;
+	private ListView mGridView;
 	View view;
 	List<BtnBean> mArrayList;
 	private MyAdapter adapter;
@@ -26,7 +27,7 @@ public class Fragment1 extends Fragment {
 			Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
 		view=inflater.inflate(R.layout.fragment1, container, false);
-		mGridView = (GridView) view.findViewById(R.id.gridview1);
+		mGridView = (ListView) view.findViewById(R.id.gridview1);
 		adapter = new MyAdapter(view.getContext(), SingletData.getInstance().getBtns());
 		setLayout();
 
@@ -49,7 +50,7 @@ public class Fragment1 extends Fragment {
 	}
 	private void setLayout(){
 		if (mGridView == null) {
-			mGridView = (GridView)view. findViewById(R.id.gridview1);
+			mGridView = (ListView) view. findViewById(R.id.gridview1);
 		}
 		mGridView.setVisibility(View.VISIBLE);
 

@@ -53,4 +53,49 @@ public class JDService extends BaseService {
         };
         t.start();
     }
+
+    public void socketOnAndOFF(final String onOFF){
+        Thread t=new Thread(){
+            @Override
+            public void run() {
+                try{
+                    Socket s=getSocket();
+                    CommModel model=new CommModel();
+                    model.setType("command");
+                    model.setCommObj("socket");
+                    model.setData(onOFF);
+                    String c= JSON.toJSONString(model);
+                    BufferedWriter bw =getBw(s);
+                    bw.write(c);
+                    bw.flush();
+
+                }catch (Exception e){
+                    e.printStackTrace();
+                }
+            }
+        };
+        t.start();
+    }
+    public void lightOnAndOFF(final String onOFF){
+        Thread t=new Thread(){
+            @Override
+            public void run() {
+                try{
+                    Socket s=getSocket();
+                    CommModel model=new CommModel();
+                    model.setType("command");
+                    model.setCommObj("light");
+                    model.setData(onOFF);
+                    String c= JSON.toJSONString(model);
+                    BufferedWriter bw =getBw(s);
+                    bw.write(c);
+                    bw.flush();
+
+                }catch (Exception e){
+                    e.printStackTrace();
+                }
+            }
+        };
+        t.start();
+    }
 }

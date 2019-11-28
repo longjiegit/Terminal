@@ -31,10 +31,14 @@ public class JDFragment extends Fragment {
     public void setLayout(){
         Button startBtn=(Button) view.findViewById(R.id.jd_start);
         Button shutBtn=(Button) view.findViewById(R.id.jd_shut);
+        Button socketBtnOn=(Button)view.findViewById(R.id.button);
+        Button socketBtnOFF=(Button)view.findViewById(R.id.button2);
+        Button lightBtnOn=(Button)view.findViewById(R.id.button3);
+        Button lightBtnOFF=(Button)view.findViewById(R.id.button4);
         startBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(view.getContext(),"开启电源",Toast.LENGTH_SHORT).show();
+                Toast.makeText(view.getContext(),"设备全开",Toast.LENGTH_SHORT).show();
                 JDService jdService=new JDService();
                 jdService.onkeyStart();
             }
@@ -42,9 +46,41 @@ public class JDFragment extends Fragment {
         shutBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(view.getContext(),"关闭电源",Toast.LENGTH_SHORT).show();
+                Toast.makeText(view.getContext(),"设备全关",Toast.LENGTH_SHORT).show();
                 JDService jdService=new JDService();
                 jdService.onkeyClose();
+            }
+        });
+        socketBtnOn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(view.getContext(),"插座全开",Toast.LENGTH_SHORT).show();
+                JDService jdService=new JDService();
+                jdService.socketOnAndOFF("on");
+            }
+        });
+        socketBtnOFF.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(view.getContext(),"插座全关",Toast.LENGTH_SHORT).show();
+                JDService jdService=new JDService();
+                jdService.socketOnAndOFF("off");
+            }
+        });
+        lightBtnOn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(view.getContext(),"灯光全开",Toast.LENGTH_SHORT).show();
+                JDService jdService=new JDService();
+                jdService.lightOnAndOFF("on");
+            }
+        });
+        lightBtnOn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(view.getContext(),"灯光全关",Toast.LENGTH_SHORT).show();
+                JDService jdService=new JDService();
+                jdService.lightOnAndOFF("off");
             }
         });
     }
