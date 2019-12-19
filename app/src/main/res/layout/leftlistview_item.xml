@@ -5,6 +5,7 @@
     android:orientation="vertical" >
 
     <LinearLayout
+        android:id="@+id/leftlayout"
         android:layout_width="match_parent"
         android:layout_height="150dip"
         android:gravity="center"
@@ -14,6 +15,7 @@
             android:id="@+id/leftTitleTextView"
             android:textSize="20dp"
             android:textStyle="bold"
+
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="" />

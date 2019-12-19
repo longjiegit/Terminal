@@ -20,7 +20,7 @@ import androidx.fragment.app.FragmentActivity;
 import androidx.viewpager.widget.ViewPager;
 
 import com.mgc.terminal.R;
-
+import com.mgc.terminal.adapter.LeftListViewAdapter;
 
 
 public class MainAct extends FragmentActivity {
@@ -34,6 +34,7 @@ public class MainAct extends FragmentActivity {
     private VideoFragment videoFragment;
     private ArrayList<String> leftlist = new ArrayList<String>();// left list
     FragmentAdapter adapter;
+    public static int mPosition;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         // TODO Auto-generated method stub
@@ -105,9 +106,12 @@ public class MainAct extends FragmentActivity {
             map.put("lefttitle", leftlist.get(i).toString());
             listitems.add(map);
         }
+        /**
         SimpleAdapter adapter = new SimpleAdapter(this, listitems,
                 R.layout.leftlistview_item, new String[] { "lefttitle" },
                 new int[] { R.id.leftTitleTextView });
+         **/
+        final LeftListViewAdapter adapter=new LeftListViewAdapter(this,leftlist);
 
         leftListView.setAdapter(adapter);
         // listview点击事件
@@ -117,8 +121,9 @@ public class MainAct extends FragmentActivity {
             public void onItemClick(AdapterView<?> parent, View view,
                                     int position, long id) {
                 // TODO Auto-generated method stub
+                mPosition=position;
                 fragmentViewPager.setCurrentItem(position);
-
+                adapter.notifyDataSetChanged();
             }
         });
     }

@@ -22,10 +22,6 @@ public class MyAdapter extends BaseAdapter {
         mContext = context;
         mArrayList = arrayList;
         mInflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-        if(arrayList!=null)
-        System.out.println(arrayList.toArray());
-
-
     }
 
     @Override

@@ -12,7 +12,7 @@
         android:theme="@style/AppTheme">
         <activity
             android:name=".app.SplashActivity"
-            android:label="Test">
+            android:label="中控">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
