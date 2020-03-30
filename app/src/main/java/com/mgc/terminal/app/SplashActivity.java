@@ -109,49 +109,49 @@ public class SplashActivity extends AppCompatActivity {
                 return false;
             }
         });
-        loginBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                try {
-                    String pwd = pwdText.getText().toString();
-                    System.out.println("密码" + pwd);
-                    if (!"".equals(pwd)) {
-                        if (pwd.equals(password)) {
-                            SingletData.getInstance().setIp(url);
-                            SingletData.getInstance().setPort(port);
-                            //ip和port是否有变
-                            String t = ipAndPort.getText().toString();
-
-                            String t2 = url + ":" + port;
-                            if (!t2.equals(t)) {
-                                DBHelper helper2 = DBHelper.getInstance(SplashActivity.this);
-                                SQLiteDatabase db2 = helper2.getWritableDatabase();
-                                String[] ts = t.split(":");
-                                ContentValues contentValues = new ContentValues();
-                                contentValues.put("url", ts[0]);
-                                contentValues.put("port", Integer.parseInt(ts[1]));
-                                db2.update("servurl",contentValues,null,null);
-
-                                Intent it = new Intent(SplashActivity.this, MainAct.class);//启动MainActivity
-                                startActivity(it);
-                                finish();
-                            } else {
-                                Intent it = new Intent(SplashActivity.this, MainAct.class);//启动MainActivity
-                                startActivity(it);
-                                finish();
-                            }
-
-                        }else{
-                            Toast.makeText(getApplicationContext(), "密码错误", Toast.LENGTH_SHORT).show();
-                        }
-                    } else {
-                        Toast.makeText(getApplicationContext(), "请输入密码", Toast.LENGTH_SHORT).show();
-                    }
-                }catch (Exception e){
-
-                }
-            }
-        });
+//        loginBtn.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                try {
+//                    String pwd = pwdText.getText().toString();
+//                    System.out.println("密码" + pwd);
+//                    if (!"".equals(pwd)) {
+//                        if (pwd.equals(password)) {
+//                            SingletData.getInstance().setIp(url);
+//                            SingletData.getInstance().setPort(port);
+//                            //ip和port是否有变
+//                            String t = ipAndPort.getText().toString();
+//
+//                            String t2 = url + ":" + port;
+//                            if (!t2.equals(t)) {
+//                                DBHelper helper2 = DBHelper.getInstance(SplashActivity.this);
+//                                SQLiteDatabase db2 = helper2.getWritableDatabase();
+//                                String[] ts = t.split(":");
+//                                ContentValues contentValues = new ContentValues();
+//                                contentValues.put("url", ts[0]);
+//                                contentValues.put("port", Integer.parseInt(ts[1]));
+//                                db2.update("servurl",contentValues,null,null);
+//
+//                                Intent it = new Intent(SplashActivity.this, MainAct.class);//启动MainActivity
+//                                startActivity(it);
+//                                finish();
+//                            } else {
+//                                Intent it = new Intent(SplashActivity.this, MainAct.class);//启动MainActivity
+//                                startActivity(it);
+//                                finish();
+//                            }
+//
+//                        }else{
+//                            Toast.makeText(getApplicationContext(), "密码错误", Toast.LENGTH_SHORT).show();
+//                        }
+//                    } else {
+//                        Toast.makeText(getApplicationContext(), "请输入密码", Toast.LENGTH_SHORT).show();
+//                    }
+//                }catch (Exception e){
+//
+//                }
+//            }
+//        });
         DataInit d=new DataInit(progressDialog,handler,url,port);
         d.start();
 
