@@ -11,7 +11,7 @@ public class SingletData {
     private String ip;
     private int port;
     private SingletData(){
-        ip="192.168.1.116";
+        ip="192.168.1.146";
         port=9080;
     }
     public static SingletData getInstance() {

@@ -7,6 +7,7 @@ public class CommModel {
     private String destip;
     private String destmac;
     private String data;
+    private String zxcode;
 
     public String getType() {
         return type;
@@ -54,5 +55,13 @@ public class CommModel {
 
     public void setData(String data) {
         this.data = data;
+    }
+
+    public String getZxcode() {
+        return zxcode;
+    }
+
+    public void setZxcode(String zxcode) {
+        this.zxcode = zxcode;
     }
 }

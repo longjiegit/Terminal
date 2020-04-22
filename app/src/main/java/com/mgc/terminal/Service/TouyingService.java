@@ -59,6 +59,36 @@ public class TouyingService extends BaseService{
         t.start();
     }
 
+    /**
+     * 展项的投影开关控制
+     * @param zxcode
+     */
+    public void TouyingForzx(final String zxcode){
+        Thread t=new Thread(){
+            @Override
+            public void run() {
+                super.run();
+                try{
+                    Socket s=getSocket();
+                    CommModel model=new CommModel();
+                    model.setType("command");
+                    model.setCommObj("zxtouying");
+                    model.setDestip("");
+                    model.setData("");
+                    model.setZxcode(zxcode);
+                    String c= JSON.toJSONString(model);
+                    BufferedWriter bw =getBw(s);
+                    bw.write(c);
+                    bw.flush();
+
+                }catch (Exception e){
+                    e.printStackTrace();
+                }
+            }
+        };
+        t.start();
+    }
+
     public Socket getSocket(String IP) throws  Exception{
 
         System.out.println("连接投影---"+IP);

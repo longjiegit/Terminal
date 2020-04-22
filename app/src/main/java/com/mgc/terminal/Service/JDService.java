@@ -46,6 +46,7 @@ public class JDService extends BaseService {
                     bw.write(c);
                     bw.flush();
 
+
                 }catch (Exception e){
                     e.printStackTrace();
                 }

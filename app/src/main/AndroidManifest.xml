@@ -12,12 +12,25 @@
         android:theme="@style/AppTheme">
         <activity
             android:name=".app.MainActivity"
-            android:label="中控">
+            android:screenOrientation="landscape"
+            android:label="中控系统">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
+        </activity>
+        <activity android:name=".app.InfoActivity" android:screenOrientation="landscape">
+        </activity>
+        <activity android:name=".app.ShidaiActivity" android:screenOrientation="landscape">
+        </activity>
+        <activity android:name=".app.HonorActivity" android:screenOrientation="landscape">
+        </activity>
+        <activity android:name=".app.CuicanActivity" android:screenOrientation="landscape">
+        </activity>
+        <activity android:name=".app.HexinActivity" android:screenOrientation="landscape">
+        </activity>
+        <activity android:name=".app.JiyuActivity" android:screenOrientation="landscape">
         </activity>
     </application>
 

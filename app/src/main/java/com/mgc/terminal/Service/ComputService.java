@@ -68,6 +68,37 @@ public class ComputService extends BaseService{
         };
         t.start();
     }
+
+    /**
+     * 控制展项的电脑开关机
+     * @param zxcode
+     */
+    public  void computerForZX(final String zxcode,final String OnOFF){
+        Thread t=new Thread(){
+            @Override
+            public void run() {
+                super.run();
+                try{
+                    Socket s=getSocket();
+                    CommModel model=new CommModel();
+                    model.setType("command");
+                    model.setCommObj("zxcomput");
+                    model.setDestmac("");
+                    model.setDestip("");
+                    model.setData(OnOFF);
+                    model.setZxcode(zxcode);
+                    String c= JSON.toJSONString(model);
+                    BufferedWriter bw =getBw(s);
+                    bw.write(c);
+                    bw.flush();
+
+                }catch (Exception e){
+                    e.printStackTrace();
+                }
+            }
+        };
+        t.start();
+    }
     public  void startByControl(final String Mac){
         Thread t=new Thread(){
             @Override
